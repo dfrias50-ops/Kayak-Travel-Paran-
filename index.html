@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayak Travel Paraná | Ecoturismo y Aventura</title>
+<style>
+:root {
+--azul-rio: #1e4d6b;
+--verde-naturaleza: #2e6f40;
+--naranja-aventura: #e67e22;
+--gris-claro: #f4f7f6;
+--texto-oscuro: #2c3e50;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+color: var(--texto-oscuro);
+line-height: 1.6;
+background-color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+padding: 0 20px;
+}
+
+.hero h1 {
+font-size: 3.5rem;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+font-size: 1.5rem;
+margin-bottom: 30px;
+max-width: 600px;
+font-weight: 300;
+}
+
+.btn-cta {
+background-color: var(--naranja-aventura);
+color: white;
+padding: 15px 35px;
+border: none;
+border-radius: 50px;
+font-size: 1.2rem;
+font-weight: bold;
+text-decoration: none;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-cta:hover {
+background-color: #d35400;
+transform: translateY(-3px);
+}
+
+/* Sobre Nosotros */
+.about {
+padding: 80px 20px;
+text-align: center;
+background-color: var(--gris-claro);
+}
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+h2 {
+font-size: 2.5rem;
+color: var(--azul-rio);
+margin-bottom: 20px;
+position: relative;
+}
+
+h2::after {
+content: '';
+display: block;
+width: 60px;
+height: 4px;
+background-color: var(--verde-naturaleza);
+margin: 10px auto 0;
+border-radius: 2px;
+}
+
+.about p {
+font-size: 1.1rem;
+max-width: 800px;
+margin: 0 auto;
+color: #555;
+}
+
+/* Próximas Expediciones */
+.expeditions {
+padding: 80px 20px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+margin-top: 40px;
+}
+
+.card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+border: 1px solid #e1e8ed;
+transition: transform 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card-img {
+height: 220px;
+background-size: cover;
+background-position: center;
+}
+
+.card-content {
+padding: 25px;
+}
+
+.card-tag {
+background-color: var(--verde-naturaleza);
+color: white;
+padding: 5px 10px;
+font-size: 0.8rem;
+font-weight: bold;
+border-radius: 4px;
+display: inline-block;
+margin-bottom: 10px;
+}
+
+.card h3 {
+color: var(--azul-rio);
+font-size: 1.4rem;
+margin-bottom: 10px;
+}
+
+.card .date {
+font-weight: bold;
+color: var(--naranja-aventura);
+margin-bottom: 15px;
+font-size: 0.95rem;
+}
+
+.card ul {
+list-style: none;
+margin-bottom: 20px;
+font-size: 0.95rem;
+color: #666;
+}
+
+.card ul li {
+margin-bottom: 5px;
+display: flex;
+align-items: center;
+}
+
+.card ul li::before {
+content: "✓";
+color: var(--verde-naturaleza);
+font-weight: bold;
+margin-right: 8px;
+}
+
+.btn-card {
+display: block;
+text-align: center;
+background-color: var(--azul-rio);
+color: white;
+padding: 10px;
+text-decoration: none;
+border-radius: 6px;
+font-weight: bold;
+transition: background 0.3s;
+}
+
+.btn-card:hover {
+background-color: #112d42;
+}
+
+/* Testimonios / Seguridad */
+.features {
+background-color: var(--azul-rio);
+color: white;
+padding: 60px 20px;
+text-align: center;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-top: 30px;
+}
+
+.feature-item h4 {
+font-size: 1.3rem;
+margin-bottom: 10px;
+color: #51a4db;
+}
+
+/* Contacto / Footer */
+.footer {
+background-color: #1a1a1a;
+color: #aeaeae;
+padding: 40px 20px;
+text-align: center;
+}
+
+.footer h3 {
+color: white;
+margin-bottom: 15px;
+}
+
+.whatsapp-link {
+color: #2ecc71;
+font-weight: bold;
+text-decoration: none;
+font-size: 1.2rem;
+display: inline-block;
+margin-top: 10px;
+}
+
+.whatsapp-link:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Kayak Travel Paraná</h1>
+<p>Ecoturismo, expediciones y travesías guiadas. Conectá con la naturaleza y descubrí paisajes únicos desde el agua.</p>
+<a href="#contacto" class="btn-cta">Reservá tu Lugar por WhatsApp</a>
+</section>
+
+<section class="about">
+<div class="container">
+<h2>Nuestra Propuesta</h2>
+<p>En Kayak Travel Paraná organizamos expediciones diseñadas tanto para quienes buscan su primera experiencia en el agua como para palistas experimentados. Priorizamos la seguridad, el respeto por el medio ambiente y la camaradería en cada campamento y remada.</p>
+</div>
+</</section>
+
+<section class="expeditions" id="viajes">
+<div class="container">
+<h2>Próximas Travesías</h2>
+<div class="grid">
+
+<div class="card">
+<div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80');"></div>
+<div class="card-content">
+<span class="card-tag">Cupos Limitados</span>
+<h3>Aventura Extrema: Esteros del Iberá</h3>
+<p class="date">Del 09 al 12 de Julio, 2026</p>
+<ul>
+<li>Navegación guiada en zonas vírgenes</li>
+<li>Avistaje de fauna autóctona</li>
+<li>Pensión completa y campamento agreste</li>
+<li>Logística y equipos de seguridad incluidos</li>
+</ul>
+<a href="#contacto" class="btn-card">Consultar Itinerario</a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80');"></div>
+<div class="card-content">
+<span class="card-tag">¡Últimos Lugares!</span>
+<h3>Aventura Extrema: Esteros del Iberá</h3>
+<p class="date">Del 23 al 26 de Julio, 2026</p>
+<ul>
+<li>Navegación guiada en zonas vírgenes</li>
+<li>Avistaje de fauna autóctona</li>
+<li>Pensión completa y campamento agreste</li>
+<li>Logística y equipos de seguridad incluidos</li>
+</ul>
+<a href="#contacto" class="btn-card">Consultar Itinerario</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="features">
+<div class="container">
+<h2>¿Por qué remar con nosotros?</h2>
+<div class="features-grid">
+<div class="feature-item">
+<h4>Seguridad Primero</h4>
+<p>Guías experimentados, equipos de comunicación y chalecos reglamentarios para una travesía 100% segura.</p>
+</div>
+<div class="feature-item">
+<h4>Ecoturismo Real</h4>
+<p>Viajamos bajo la filosofía de "No Dejar Rastro", cuidando y respetando cada ecosistema que visitamos.</p>
+</div>
+<div class="feature-item">
+<h4>Logística Completa</h4>
+<p>Nos encargamos del traslado de equipos, comidas al disco y la organización para que vos solo disfrutes.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="footer" id="contacto">
+<div class="container">
+<h3>¿Listo para la próxima aventura?</h3>
+<p>Hacé clic abajo para coordinar tu reserva, consultar tarifas o pedir el itinerario completo detallado por WhatsApp.</p>
+<a href="https://wa.me/3434461404" class="whatsapp-link" target="_blank">💬 WhatsApp Business: +54 9 343 446-1404</a>
+<p style="margin-top: 30px; font-size: 0.8rem; color: #666;">© 2026 Kayak Travel Paraná. Todos los derechos reservados.</p>
+</div>
+</section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayak Travel Paraná | Ecoturismo y Aventura</title>
+<style>
+:root {
+--azul-rio: #1e4d6b;
+--verde-naturaleza: #2e6f40;
+--naranja-aventura: #e67e22;
+--gris-claro: #f4f7f6;
+--texto-oscuro: #2c3e50;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+color: var(--texto-oscuro);
+line-height: 1.6;
+background-color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+padding: 0 20px;
+}
+
+.hero h1 {
+font-size: 3.5rem;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+font-size: 1.5rem;
+margin-bottom: 30px;
+max-width: 600px;
+font-weight: 300;
+}
+
+.btn-cta {
+background-color: var(--naranja-aventura);
+color: white;
+padding: 15px 35px;
+border: none;
+border-radius: 50px;
+font-size: 1.2rem;
+font-weight: bold;
+text-decoration: none;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-cta:hover {
+background-color: #d35400;
+transform: translateY(-3px);
+}
+
+/* Sobre Nosotros */
+.about {
+padding: 80px 20px;
+text-align: center;
+background-color: var(--gris-claro);
+}
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+h2 {
+font-size: 2.5rem;
+color: var(--azul-rio);
+margin-bottom: 20px;
+position: relative;
+}
+
+h2::after {
+content: '';
+display: block;
+width: 60px;
+height: 4px;
+background-color: var(--verde-naturaleza);
+margin: 10px auto 0;
+border-radius: 2px;
+}
+
+.about p {
+font-size: 1.1rem;
+max-width: 800px;
+margin: 0 auto;
+color: #555;
+}
+
+/* Próximas Expediciones */
+.expeditions {
+padding: 80px 20px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+margin-top: 40px;
+}
+
+.card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+border: 1px solid #e1e8ed;
+transition: transform 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card-img {
+height: 220px;
+background-size: cover;
+background-position: center;
+}
+
+.card-content {
+padding: 25px;
+}
+
+.card-tag {
+background-color: var(--verde-naturaleza);
+color: white;
+padding: 5px 10px;
+font-size: 0.8rem;
+font-weight: bold;
+border-radius: 4px;
+display: inline-block;
+margin-bottom: 10px;
+}
+
+.card h3 {
+color: var(--azul-rio);
+font-size: 1.4rem;
+margin-bottom: 10px;
+}
+
+.card .date {
+font-weight: bold;
+color: var(--naranja-aventura);
+margin-bottom: 15px;
+font-size: 0.95rem;
+}
+
+.card ul {
+list-style: none;
+margin-bottom: 20px;
+font-size: 0.95rem;
+color: #666;
+}
+
+.card ul li {
+margin-bottom: 5px;
+display: flex;
+align-items: center;
+}
+
+.card ul li::before {
+content: "✓";
+color: var(--verde-naturaleza);
+font-weight: bold;
+margin-right: 8px;
+}
+
+.btn-card {
+display: block;
+text-align: center;
+background-color: var(--azul-rio);
+color: white;
+padding: 10px;
+text-decoration: none;
+border-radius: 6px;
+font-weight: bold;
+transition: background 0.3s;
+}
+
+.btn-card:hover {
+background-color: #112d42;
+}
+
+/* Testimonios / Seguridad */
+.features {
+background-color: var(--azul-rio);
+color: white;
+padding: 60px 20px;
+text-align: center;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-top: 30px;
+}
+
+.feature-item h4 {
+font-size: 1.3rem;
+margin-bottom: 10px;
+color: #51a4db;
+}
+
+/* Contacto / Footer */
+.footer {
+background-color: #1a1a1a;
+color: #aeaeae;
+padding: 40px 20px;
+text-align: center;
+}
+
+.footer h3 {
+color: white;
+margin-bottom: 15px;
+}
+
+.whatsapp-link {
+color: #2ecc71;
+font-weight: bold;
+text-decoration: none;
+font-size: 1.2rem;
+display: inline-block;
+margin-top: 10px;
+}
+
+.whatsapp-link:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Kayak Travel Paraná</h1>
+<p>Ecoturismo, expediciones y travesías guiadas. Conectá con la naturaleza y descubrí paisajes únicos desde el agua.</p>
+<a href="#contacto" class="btn-cta">Reservá tu Lugar por WhatsApp</a>
+</section>
+
+<section class="about">
+<div class="container">
+<h2>Nuestra Propuesta</h2>
+<p>En Kayak Travel Paraná organizamos expediciones diseñadas tanto para quienes buscan su primera experiencia en el agua como para palistas experimentados. Priorizamos la seguridad, el respeto por el medio ambiente y la camaradería en cada campamento y remada.</p>
+</div>
+</</section>
+
+<section class="expeditions" id="viajes">
+<div class="container">
+<h2>Próximas Travesías</h2>
+<div class="grid">
+
+<div class="card">
+<div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80');"></div>
+<div class="card-content">
+<span class="card-tag">Cupos Limitados</span>
+<h3>Aventura Extrema: Esteros del Iberá</h3>
+<p class="date">Del 09 al 12 de Julio, 2026</p>
+<ul>
+<li>Navegación guiada en zonas vírgenes</li>
+<li>Avistaje de fauna autóctona</li>
+<li>Pensión completa y campamento agreste</li>
+<li>Logística y equipos de seguridad incluidos</li>
+</ul>
+<a href="#contacto" class="btn-card">Consultar Itinerario</a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80');"></div>
+<div class="card-content">
+<span class="card-tag">¡Últimos Lugares!</span>
+<h3>Aventura Extrema: Esteros del Iberá</h3>
+<p class="date">Del 23 al 26 de Julio, 2026</p>
+<ul>
+<li>Navegación guiada en zonas vírgenes</li>
+<li>Avistaje de fauna autóctona</li>
+<li>Pensión completa y campamento agreste</li>
+<li>Logística y equipos de seguridad incluidos</li>
+</ul>
+<a href="#contacto" class="btn-card">Consultar Itinerario</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="features">
+<div class="container">
+<h2>¿Por qué remar con nosotros?</h2>
+<div class="features-grid">
+<div class="feature-item">
+<h4>Seguridad Primero</h4>
+<p>Guías experimentados, equipos de comunicación y chalecos reglamentarios para una travesía 100% segura.</p>
+</div>
+<div class="feature-item">
+<h4>Ecoturismo Real</h4>
+<p>Viajamos bajo la filosofía de "No Dejar Rastro", cuidando y respetando cada ecosistema que visitamos.</p>
+</div>
+<div class="feature-item">
+<h4>Logística Completa</h4>
+<p>Nos encargamos del traslado de equipos, comidas al disco y la organización para que vos solo disfrutes.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="footer" id="contacto">
+<div class="container">
+<h3>¿Listo para la próxima aventura?</h3>
+<p>Hacé clic abajo para coordinar tu reserva, consultar tarifas o pedir el itinerario completo detallado por WhatsApp.</p>
+<a href="https://wa.me/3434461404" class="whatsapp-link" target="_blank">💬 WhatsApp Business: +54 9 343 446-1404</a>
+<p style="margin-top: 30px; font-size: 0.8rem; color: #666;">© 2026 Kayak Travel Paraná. Todos los derechos reservados.</p>
+</div>
+</section>
+
+</body>
+</html>
+
+
+Sumérgete en aventuras únicas por los principales paisajes del litoral. Ofrecemos expediciones en kayak, ecoturismo y circuitos de aventura en Esteros del Iberá, Saltos del Moconá , Rio Negro , Rio Uruguay , Rio Corrientes ,Rio Paraná y otros destinos increíbles.
